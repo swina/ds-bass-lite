@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DecentSampler minVersion="1.8.14">
+  <!-- <groups ampVelTrack="0.0" attack="0.0" decay="1" sustain="0.430" release="0.024" volume="-1.1585dB"> -->
+  <groups ampVelTrack="0.0" volume="-2.1585dB">
+    <group seqMode="random" name="pickedBass" silencedByTags="damp" silencingMode="normal" release="1.0">
+      <sample path="Samples/Picked Bass E0.wav" volume="-3.0dB" rootNote="40" loNote="28" hiNote="40" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Picked Bass A#0.wav" volume="-3.0dB" rootNote="46" loNote="41" hiNote="47" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Picked Bass D1.wav" volume="-3.0dB" rootNote="50" loNote="48" hiNote="52" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Picked Bass G1.wav" volume="-3.0dB" rootNote="55" loNote="53" hiNote="77" loVel="1" hiVel="80"  seqPosition="1" />
+      <sample path="Samples/Bass Harm G4.wav" volume="-3.0dB" rootNote="79" loNote="78" hiNote="108" loVel="1" hiVel="127"  seqPosition="1" />
+    </group>
+  </groups>
+  <effects>
+    <effect type="lowpass_4pl" frequency="22000.0"/>
+    <effect type="reverb" wetLevel="0.03" roomSize="0.85" damping="O.2"/>
+    <effect type="chorus" mix="0.34" modDepth=".1" modRate="0.2"/>
+  </effects>
+ 
+  <ui width="812" height="522" bgImage="3.png" layoutMode="relative" bgMode="top_left"  bgColor="FF000000">
+    <tab name="main">
+      <!-- Tone control -->
+      <labeled-knob x="550" y="160" label="Tone" type="float" minValue="60" maxValue="1200" value="470.0" textColor="FFFFFFFF" textSize="22">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+      </labeled-knob>
+
+      <!-- Chorus controls -->
+      <labeled-knob x="20" y="240" label="Chorus" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="20" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_CHORUS_MIX"/>
+      </labeled-knob>
+
+      <labeled-knob x="100" y="270" label="Depth" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.4" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_CHORUS_MOD_DEPTH"/>
+      </labeled-knob>
+
+      <labeled-knob x="150" y="270" label="Rate" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_CHORUS_MOD_RATE"/>
+      </labeled-knob>
+
+      <!-- Reverb controls -->
+      <labeled-knob x="596" y="240" label="Rev" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="20" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+      </labeled-knob>
+
+      <!-- <labeled-knob x="120" y="250" label="Reverb" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+      </labeled-knob> -->
+
+      <labeled-knob x="690" y="270" label="Room Size" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.4" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_ROOM_SIZE"/>
+      </labeled-knob>
+
+      <labeled-knob x="740" y="270" label="Damping" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_DAMPING"/>
+      </labeled-knob>
+    </tab>
+  </ui>
+</DecentSampler>
