@@ -26,10 +26,6 @@ The quality of samples makes the job easier and faster and the most important jo
 
 - Decent Sampler
 
-## Included formats
-
-- Decent Sampler
-
 ## Release notes
 First release. For any problem or advice please contact me.
 
